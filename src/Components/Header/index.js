@@ -1,7 +1,15 @@
-<header>
+import React from "react"
+
+import Bootstrap from "../Header/bootstrap.svg";
+
+
+const Header = (props) => {
+
+    return(
+        <header className="container py-3">
     <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
       <a href="/" className="d-flex align-items-center text-dark text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" className="me-2" 
+        <svg xmlns={Bootstrap} width="40" height="32" className="me-2" 
         viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" 
         clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 
         14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 
@@ -24,8 +32,10 @@
       </nav>
     </div>
 
-    <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
-      <h1 className="display-4 fw-normal">Pricing</h1>
-      <p className="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
-    </div>
+   
   </header>
+    )
+
+};
+
+export default Header;
