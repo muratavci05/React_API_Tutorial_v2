@@ -10,8 +10,8 @@ const Header = (props) => {
     <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
       <a href="/" className="d-flex align-items-center text-dark text-decoration-none">
         <svg xmlns={Bootstrap} width="40" height="32" className="me-2" 
-        viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" 
-        clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 
+        viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fillRule="evenodd" 
+        clipRule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 
         14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 
         10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 
         94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 
@@ -25,10 +25,9 @@ const Header = (props) => {
       </a>
 
       <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a className="me-3 py-2 text-dark text-decoration-none" href="#">Features</a>
-        <a className="me-3 py-2 text-dark text-decoration-none" href="#">Enterprise</a>
-        <a className="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
-        <a className="py-2 text-dark text-decoration-none" href="#">Pricing</a>
+        <a className="btn btn-primary me-3 py-2 " href="#">Login</a>
+        <a className="btn btn-danger me-3 py-2 " href="#">Register</a>
+        
       </nav>
     </div>
 
