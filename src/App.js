@@ -1,7 +1,15 @@
 import React from "react";
 import Header from "./Components/Header";
-import Main from "./Components/Main";
 import Footer from "./Components/Footer";
+import Home from "./Pages/Home";
+
+import {
+  HashRouter,
+  BrowserRouter,
+  Routes,
+  Route,
+  
+} from "react-router-dom";
 
 
 function App() {
@@ -9,7 +17,11 @@ function App() {
     <div className="App">
     
     <Header />
-    <Main/>
+    <BrowserRouter>
+    <Routes>
+      <Route index element={<Home/>}/>
+    </Routes>
+    </BrowserRouter>
     <Footer/>
        
       
