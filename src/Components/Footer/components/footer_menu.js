@@ -7,7 +7,7 @@ const FooterMenu = (props) => {
     return(
         <div >
             <div className="col-6 col-md">
-        <h5>Features</h5>
+        <h5>Features ıuıu</h5>
         <ul className="list-unstyled text-small">
           <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
           <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Random feature</a></li>
