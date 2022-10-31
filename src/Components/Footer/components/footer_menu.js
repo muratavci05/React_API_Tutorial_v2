@@ -4,17 +4,24 @@ import React from "react";
 const FooterMenu = (props) => {
     console.log ("footer menu props >>>", props);
 
+    const footerMenu = props.menu.map((item, index )=>{
+            console.log (">>>footer menu item", item);
+
+            return(
+              <li className="mb-1">
+                <a className="link-secondary text-decoration-none" 
+                href="#">{item}</a></li>
+
+            )
+    })
+
     return(
-        <div >
+        <div className="container">
             <div className="col-6 col-md">
-        <h5>Features ıuıu</h5>
+        <h5>{props.title}</h5>
         <ul className="list-unstyled text-small">
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Random feature</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Team feature</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Another one</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Last time</a></li>
+          {footerMenu}
+        
         </ul>
       </div>
         </div>

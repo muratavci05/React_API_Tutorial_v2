@@ -1,17 +1,26 @@
 
 import React from "react";
 
-const CategoriesMenu = () => {
+const CategoriesMenu = (props) => {
+  console.log("categoriMenu >>>", props);
+
+    const categoriesMenu = props.menu.map ((item, index)=>{
+          console.log("categories menu item", item);
+
+          return(
+            <li className="mb-1">
+              <a className="link-secondary text-decoration-none" 
+              href="#">{item}</a></li>
+
+          )
+    })
     
     return(
         <div className="col-6 col-md">
             <div className="col-6 col-md">
-        <h5>Categories</h5>
+        <h5>{props.title}</h5>
         <ul className="list-unstyled text-small">
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Kitchen</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Woman's</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Man's</a></li>
-          <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Children's</a></li>
+          {categoriesMenu}
         </ul>
       </div>
         </div>

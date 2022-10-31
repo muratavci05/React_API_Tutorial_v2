@@ -6,6 +6,8 @@ import FooterMenu from "./components/footer_menu";
 
 
 const Footer = (props) => {
+  console.log("footer menu props", props);
+
 
     return(
     <div className="container py-3">
@@ -15,18 +17,17 @@ const Footer = (props) => {
         <img className="mb-2" src={BootstrapLogo} alt="" width="24" height="19"/>
         <small className="d-block mb-3 text-muted">© 2017–2022</small>
       </div>
-        <div className="col-6 col-md">
-        <FooterMenu/>
+        <div className="col-3 col-md">
+        <FooterMenu title="Servisler" menu={["Tadilat","Kargolama","Teknik Servis","Diğer"]}/>  
         </div>
         <div className="col-6 col-md">
-        <CategoriesMenu/>
+        <CategoriesMenu title="Kategoriler" menu={["Bayan","Bay","Çocuk","Outlet"]}/>
         </div>
         <div className="col-6 col-md">
-        <AboutMenu/>
+        <AboutMenu title="Hakkımızda" menu={["Ekibimiz","Vizyon","Misyon","İletişim"]}/>
         </div>
         
-      
-      
+           
     </div>
   </footer>
   </div>

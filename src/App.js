@@ -5,7 +5,6 @@ import Home from "./Pages/Home";
 
 import {
   HashRouter,
-  BrowserRouter,
   Routes,
   Route,
   
@@ -17,11 +16,11 @@ function App() {
     <div className="App">
     
     <Header />
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
       <Route index element={<Home/>}/>
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
     <Footer/>
        
       
