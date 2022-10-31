@@ -9,8 +9,8 @@ const FooterMenu = (props) => {
 
             return(
               <li className="mb-1">
-                <a className="link-secondary text-decoration-none" 
-                href="#">{item}</a></li>
+                <button className="btn btn-link btn-sm text-decoration-none" 
+                href="#">{item}</button></li>
 
             )
     })
