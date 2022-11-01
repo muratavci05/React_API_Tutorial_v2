@@ -8,7 +8,7 @@ const Header = (props) => {
     return(
         <header className="container py-3">
     <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-      <a href="/" className="d-flex align-items-center text-dark text-decoration-none">
+      <a href="#/" className="d-flex align-items-center text-dark text-decoration-none">
         <svg xmlns={Bootstrap} width="40" height="32" className="me-2" 
         viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fillRule="evenodd" 
         clipRule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 
@@ -21,12 +21,12 @@ const Header = (props) => {
         46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 
         0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 
         0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
-        <span className="fs-4">React API Tutorial v2</span>
+        <span className="fs-4">Hizmet Bulma Uygulaması</span>
       </a>
 
       <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a className="btn btn-primary me-3 py-2 " href="#">Login</a>
-        <a className="btn btn-danger me-3 py-2 " href="#">Register</a>
+        <a className="btn btn-primary me-3 py-2 " href="#/login">Login</a>
+        <a className="btn btn-danger me-3 py-2 " href="#/register">Register</a>
         
       </nav>
     </div>

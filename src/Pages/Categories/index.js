@@ -3,7 +3,7 @@ import React from "react";
 const Categories = () => {
 
     return(
-        <div>
+        <div className="container py-3">
             burası categoriler
         </div>
     )

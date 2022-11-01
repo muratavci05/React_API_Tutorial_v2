@@ -4,7 +4,7 @@ import Main from "../../Components/Main";
 const Home = () => {
 
     return(
-        <div>
+        <div className="container py-3">
             <Main/>
 
         </div>

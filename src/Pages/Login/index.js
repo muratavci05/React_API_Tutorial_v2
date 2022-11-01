@@ -3,7 +3,7 @@ import React from "react";
 const Login = () => {
 
     return(
-        <div>
+        <div className="container py-3">
             burası login
         </div>
     )
