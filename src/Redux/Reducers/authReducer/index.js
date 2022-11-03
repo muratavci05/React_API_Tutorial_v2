@@ -28,4 +28,4 @@ const Reducers = (state = initialState, action) =>{
     }
 }
 
-export default createStore (Reducers);
+export default Reducers;

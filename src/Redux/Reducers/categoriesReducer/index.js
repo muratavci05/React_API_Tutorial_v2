@@ -8,7 +8,7 @@ const initialState = {
     initialized: false,
 }
 
-const Reducer = (state =initialState, action) => {
+const Reducer = (state = initialState, action) => {
     switch(action.type) {
         case SET_CATEGORIES:
             return{
@@ -23,4 +23,4 @@ const Reducer = (state =initialState, action) => {
 
 }
 
-export default createStore (Reducer);
+export default Reducer;

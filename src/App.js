@@ -33,4 +33,14 @@ function App() {
   );
 }
 
+
+const mapStateToProps = (state) => {
+
+  console.log (">>> MAP STATE >>>", state);
+  return{
+    ...state,
+
+  }
+}
+
 export default App;

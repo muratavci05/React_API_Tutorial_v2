@@ -3,10 +3,11 @@ import BootstrapLogo from "../Footer/components/assents/bootstrap-logo.svg";
 import AboutMenu from "./components/aboutMenu";
 import CategoriesMenu from "./components/categoriesMenu";
 import FooterMenu from "./components/footer_menu";
+import { connect } from "react-redux";
 
 
 const Footer = (props) => {
-  console.log("footer menu props", props);
+  console.log("FOOTER PROPS >>>>", props);
 
 
     return(
@@ -35,4 +36,12 @@ const Footer = (props) => {
     )
 };
 
-export default Footer;
+const mapStateToProps = (state) => {
+
+  console.log("mapstateToProps >>>",state);
+  return{
+    categories_footerOrnek: state.categoriesState,
+  }
+}
+
+export default connect(mapStateToProps) (Footer);
