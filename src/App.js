@@ -5,15 +5,38 @@ import {
   Route,
   
 } from "react-router-dom";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer/index";
+import { connect } from "react-redux"; 
+
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Categories from "./Pages/Categories";
 import Services from "./Pages/Services";
 import Register from "./Pages/Register";
 
-function App() {
+import Header from "./Components/Header";
+import Footer from "./Components/Footer/index";
+import useApi from "./Hooks/useApi";
+
+
+function App (props) {
+  console.log (">>> APP PROPS", props);
+
+   const api = useApi()
+
+  if (props.categoriesState.initialized === false) {
+    api.get("https://api.adoptez1artisan.com/public/categories/listMainCategories",)
+      .then((response) => {
+        console.log('>> KATEGORI LISTESI CEVAP', response)
+    })
+    .catch((err) => console.error (">>> KATEGORI LISTESI HATASI", err));
+
+  };
+
+  if (api === false){
+    <h1>Loading</h1>
+  }
+
+      
   return (
     <div className="App">
       <Header />
@@ -37,10 +60,11 @@ function App() {
 const mapStateToProps = (state) => {
 
   console.log (">>> MAP STATE >>>", state);
-  return{
+
+  return  {
     ...state,
 
   }
 }
 
-export default App;
+export default connect (mapStateToProps)(App);

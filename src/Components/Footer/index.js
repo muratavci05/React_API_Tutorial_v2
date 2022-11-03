@@ -19,7 +19,7 @@ const Footer = (props) => {
         <small className="d-block mb-3 text-muted">© 2017–2022</small>
       </div>
         <div className="col-3 col-md">
-        <FooterMenu title="Servisler" menu={["Tadilat","Kargolama","Servis","Diğer"]}/>  
+        <FooterMenu title="Bloglar" menu={["Tadilat","Kargolama","Servis","Diğer"]}/>  
         </div>
         <div className="col-6 col-md">
         <CategoriesMenu title="Kategoriler" menu={["Bayan","Bay","Çocuk","Outlet"]}/>
