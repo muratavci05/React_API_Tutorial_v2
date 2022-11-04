@@ -16,7 +16,7 @@ import Register from "./Pages/Register";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer/index";
 import useApi from "./Hooks/useApi";
-
+import { SET_CATEGORIES } from "./Redux/Reducers/categoriesReducer";
 
 function App (props) {
   console.log (">>> APP PROPS", props);
@@ -27,6 +27,13 @@ function App (props) {
     api.get("https://api.adoptez1artisan.com/public/categories/listMainCategories",)
       .then((response) => {
         console.log('>> KATEGORI LISTESI CEVAP', response)
+        props.dispatch({
+          type: SET_CATEGORIES,
+          payload:{
+            categories:response.data.data
+          },
+
+        })
     })
     .catch((err) => console.error (">>> KATEGORI LISTESI HATASI", err));
 
