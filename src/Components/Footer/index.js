@@ -50,40 +50,48 @@ const Footer = (props) => {
 
     ]
 
-    let categoryMenu = []
+    const categoryMenu = []
     if (props.categoriesState.initialized === true) {
-      categoryMenu= props.categoriesState.categories.map((item, index) => {
+       props.categoriesState.categories.map((item, index) => {
+
+        //çekilen kategorileri sayısını belirleme >>>
+
+        if (index > 4) {
+          return;
+        }
+
+        // <<<<
                
        categoryMenu.push({
            
-            title: "elektrik tesitası",
-            link: "#/category/",
+            title: item.name,
+            link: "#/category/" + item.slug,
            
-          
-       })
+           })
+       
       });
       
     }
 
     return(
-    <div className="container py-3">
+    <div className="container py-3 footer">
         <footer className="pt-4 my-md-5 pt-md-5 border-top">
     <div className="row">
-      <div className="col-12 col-md">
+      <div className="col-12 col-sm">
         <img className="mb-2" src={BootstrapLogo} alt="" width="24" height="19"/>
         <small className="d-block mb-3 text-muted">© 2017–2022</small>
       </div>
-        <div className="col-3 col-md">
+        <div className="col-4 col-sm">
         <BlogMenu title="Bloglar" menu={blogUsMenuContent}/>  
         </div>
 
-        <div className="col-6 col-md">
+        <div className="col-4 col-sm">
         <CategoriesMenu title="Kategoriler" menu={categoryMenu}
           loading={!props.categoriesState.initialized}        
         />
         </div>
 
-        <div className="col-6 col-md">
+        <div className="col-4 col-sm">
         <AboutMenu title="Hakkımızda" menu={aboutUsMenuContent}/>
         </div>
         
