@@ -1,4 +1,3 @@
-import { createStore } from "redux";
 
 export const SET_APP_DATA = "set_app_data";
 export const REMOVE_APP_DATA = "remove_app_data";

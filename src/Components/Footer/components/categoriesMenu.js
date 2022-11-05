@@ -1,16 +1,29 @@
 
 import React from "react";
 
+
 const CategoriesMenu = (props) => {
   console.log("categoriMenu >>>", props);
 
-    const categoriesMenu = props.menu.map ((item, index)=>{
-          console.log("categories menu item", item);
+  if (props.loading === true) {
+    return(  
+    
+      <div className="col-6 col-md">
+      <img src="images/loading.gif" />
+    </div>
+    )
+  
+  }
+
+  
+
+    const categoriesMenu = props.menu.map ((item, index, arr)=>{
+        // console.log("categories menu item", item);
 
           return(
             <li className="mb-1" key={index}>
               <a className="link link-primary text-decoration-none" 
-              href="#">{item}</a></li>
+              href={item.link}>{item.title}</a></li>
 
           )
     })

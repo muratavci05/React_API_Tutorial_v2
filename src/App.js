@@ -25,15 +25,18 @@ function App (props) {
 
   if (props.categoriesState.initialized === false) {
     api.get("https://api.adoptez1artisan.com/public/categories/listMainCategories",)
-      .then((response) => {
-        console.log('>> KATEGORI LISTESI CEVAP', response)
-        props.dispatch({
+      .then((res) => {
+        console.log('>> KATEGORI LISTESI CEVAP', res)
+
+        const action = {
           type: SET_CATEGORIES,
           payload:{
-            categories:response.data.data
+            categories:res.data.data
           },
 
-        })
+        }
+
+        props.dispatch(action)
     })
     .catch((err) => console.error (">>> KATEGORI LISTESI HATASI", err));
 
@@ -41,7 +44,7 @@ function App (props) {
 
   if (api === false){
     <h1>Loading</h1>
-  }
+  };
 
       
   return (
@@ -66,7 +69,7 @@ function App (props) {
 
 const mapStateToProps = (state) => {
 
-  console.log (">>> MAP STATE >>>", state);
+  //console.log (">>> MAP STATE >>>", state);
 
   return  {
     ...state,

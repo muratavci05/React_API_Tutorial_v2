@@ -1,16 +1,25 @@
 import React from "react";
 
 
-const FooterMenu = (props) => {
-    console.log ("footer menu props >>>", props);
+const BlogMenu = (props) => {
+   console.log ("blog menu props >>>", props);
 
-    const footerMenu = props.menu.map((item, index )=>{
-            console.log (">>>footer menu item", item);
+    const blogMenu = props.menu.map((item, index )=>{
+
+      /* 
+
+        item ={
+          title: "test",
+          link: "#/about"
+        }
+      
+      */
+           //console.log (">>>blog menu item", item);
 
             return(
               <li className="mb-1" key={index}>
                 <a className="link link-primary text-decoration-none" 
-                href="#">{item}</a></li>
+                href={item.link} >{item.title} </a> </li>
 
             )
     })
@@ -20,7 +29,7 @@ const FooterMenu = (props) => {
             <div className="col-4 col-md">
         <h5>{props.title}</h5>
         <ul className="list-unstyled text-small">
-          {footerMenu}
+          {blogMenu}
         
         </ul>
       </div>
@@ -29,4 +38,4 @@ const FooterMenu = (props) => {
     )
 };
 
-export default FooterMenu;
+export default BlogMenu;

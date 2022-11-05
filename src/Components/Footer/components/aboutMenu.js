@@ -3,15 +3,15 @@ import React from "react";
 
 
 const AboutMenu = (props) => {
-  console.log("about Menu >>>", props);
+    console.log("about Menu >>>", props);
 
     const aboutMenu = props.menu.map ((item, index)=>{
-      console.log("footer menu item", item);
+    // console.log("footer menu item", item);
 
         return(
           <li className="mb-1" key={index}>
             <a className="link link-info text-decoration-none" 
-            href="#">{item}</a></li>
+            href={item.link}>{item.title}</a></li>
         );
     });
 
