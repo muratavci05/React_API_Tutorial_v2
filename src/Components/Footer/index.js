@@ -73,6 +73,37 @@ const Footer = (props) => {
       
     }
 
+    // 2 .yöntem...categorileri çekmek için  >>>
+
+      /* let categoryMenu = []
+       if (props.categoriesState.initialized === true) {
+       categoryMenu = props.categoriesState.categories.map((item, index) => {
+
+        //çekilen kategorileri sayısını belirleme >>>
+
+        if (index > 4) {
+          return;
+        }
+
+        // <<<<
+               
+       const menuItem = {
+           
+            title: item.name,
+            link: "#/category/" + item.slug,
+           
+           }
+
+           return menuItem;
+       
+      });
+      
+      }
+      categoryMenu = categoryMenu.slice(0,5)  //slice ile 0-5 arası nı getir demek
+    */
+
+      //   <<<<<
+
     return(
     <div className="container py-3 footer">
         <footer className="pt-4 my-md-5 pt-md-5 border-top">
