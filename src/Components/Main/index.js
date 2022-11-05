@@ -1,7 +1,20 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
+import useApi from "../../Hooks/useApi";
 
 
 const Main = (props) => {
+  const api = useApi();
+
+  useEffect(()=>{
+    api.get ("https://api.adoptez1artisan.com/public/categories/listMainCategories")
+        .then ((res) => {
+        console.log ("Home Res", res);
+         })
+      .catch ((err) => {
+        console.log ("Home Error", err);
+      })
+
+  },[]);
 
     return(
         <main className="container py-3">
