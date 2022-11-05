@@ -10,7 +10,7 @@ const AboutMenu = (props) => {
 
         return(
           <li className="mb-1" key={index}>
-            <a className="link link-info text-decoration-none" 
+            <a className="link link-secondary text-decoration-none" 
             href={item.link}>{item.title}</a></li>
         );
     });

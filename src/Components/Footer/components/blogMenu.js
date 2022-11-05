@@ -18,7 +18,7 @@ const BlogMenu = (props) => {
 
             return(
               <li className="mb-1" key={index}>
-                <a className="link link-primary text-decoration-none" 
+                <a className="link link-secondary text-decoration-none" 
                 href={item.link} >{item.title} </a> </li>
 
             )
