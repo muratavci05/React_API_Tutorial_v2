@@ -3,7 +3,7 @@ import React from "react";
 
 
 const AboutMenu = (props) => {
-    console.log("about Menu >>>", props);
+    // console.log("about Menu >>>", props);
 
     const aboutMenu = props.menu.map ((item, index)=>{
     // console.log("footer menu item", item);

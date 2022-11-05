@@ -6,10 +6,15 @@ import CategoryBox from "./components/category_box";
 
 const Main = (props) => {
   const api = useApi();
-  const [categories,setCategories] = useState(null)
+  const [categories,setCategories] = useState(null);
+
+  //pagination states
+  const [pageLength,setPageLength] = useState(6);
+  const [pageStart,setPageStart] = useState(0);
+
 
   useEffect(()=>{
-    api.get ("/public/categories/listMainCategories")
+    api.get ("/public/categories/listMainCategories", { params: { length: pageLength, start: pageStart } })
         .then ((res) => {
         console.log ("Home Page (api) Res", res);
         setCategories(res.data.data)
@@ -41,7 +46,7 @@ const Main = (props) => {
     } else {
  
       // Loading ekranı göster
-      categoryArray.push(<Loading/>)
+      categoryArray.push(<Loading key="0" />)
 
     }
 

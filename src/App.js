@@ -19,7 +19,7 @@ import useApi from "./Hooks/useApi";
 import { SET_CATEGORIES } from "./Redux/Reducers/categoriesReducer";
 
 function App (props) {
-  console.log (">>> APP PROPS", props);
+  //console.log (">>> APP PROPS", props);
 
    const api = useApi()
 

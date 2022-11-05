@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 
 
 const Footer = (props) => {
-  console.log("FOOTER PROPS >>>>", props);
+  // console.log("FOOTER PROPS >>>>", props);
 
     const aboutUsMenuContent = [
       {

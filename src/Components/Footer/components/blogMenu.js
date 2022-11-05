@@ -2,7 +2,7 @@ import React from "react";
 
 
 const BlogMenu = (props) => {
-   console.log ("blog menu props >>>", props);
+   // console.log ("blog menu props >>>", props);
 
     const blogMenu = props.menu.map((item, index )=>{
 

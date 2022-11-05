@@ -3,7 +3,7 @@ import React from "react";
 
 const CategoryBox = (props) => {
 
-    console.log ("categoryBox Props",props);
+    // console.log ("categoryBox Props",props);
 
 
     return(
@@ -15,7 +15,7 @@ const CategoryBox = (props) => {
           </div>
           <div className="card-body">
             <a href={props.href}>
-            <img src={props.image} style={{width:"100px", height:"100px"}}/>
+            <img src={props.image} style={{width:"125px", height:"120px"}}/>
             </a>
              </div>
         </div>
