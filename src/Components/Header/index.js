@@ -1,9 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
+import useApi from "../../Hooks/useApi";
 
 import Bootstrap from "../Header/bootstrap.svg";
 
 
 const Header = (props) => {
+
+  const api = useApi();
+  const [user, setUser]=useState(null);
 
     return(
         <header className="container py-3">
@@ -23,6 +27,8 @@ const Header = (props) => {
         0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
         <span className="fs-4">Hizmet Bulma Uygulaması</span>
       </a>
+
+      
 
       <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a className="btn btn-primary me-3 py-2 " href="#/login">Login</a>

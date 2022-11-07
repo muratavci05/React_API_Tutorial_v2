@@ -25,6 +25,12 @@ const Login = (props) => {
 
                 if (res.data.status === "success"){
                     localStorage.setItem("localStroge TOKEN",res.data.data.token);
+
+                    window.location.href = "/#"
+                    setTimeout(()=> {
+                        window.location.reload()
+                    }, 111)
+
                 } else {
                     alert("Hatalı Şifre veya Kullanıcı Adı");
                 }
@@ -44,7 +50,7 @@ const Login = (props) => {
         <div className="container py-3">
                 <div className="col">
 
-                <label htmlfor="email" className="form-label" style={{color:"purple"}}>Email 
+                <label htmlFor="email" className="form-label" style={{color:"purple"}}>Email 
                 </label>
                 <input style={{width:"225px",marginBottom:"15px"}} 
                 type="email" 
@@ -55,7 +61,7 @@ const Login = (props) => {
                 onChange={(event)=>setEmail(event.target.value)}
                 />
 
-                <label style={{marginBottom:"8px", color:"purple"}} htmlfor="password" className="form-label">Password 
+                <label style={{marginBottom:"8px", color:"purple"}} htmlFor="password" className="form-label">Password 
                 </label>
                 <input style={{width:"225px",marginBottom:"5px"}} 
                 type="password" 
