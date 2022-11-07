@@ -12,6 +12,7 @@ import Login from "./Pages/Login";
 import Categories from "./Pages/Categories";
 import Services from "./Pages/Services";
 import Register from "./Pages/Register";
+import Blogs from "./Pages/Blogs";
 
 import Header from "./Components/Header";
 import Footer from "./Components/Footer/index";
@@ -58,6 +59,7 @@ function App (props) {
             <Route path="categories" element={<Categories/>} />
             <Route path="services" element={<Services/>} />
             <Route path="register" element={<Register/>} />
+            <Route path="blogs" element={<Blogs/>} />
            </Routes>
         </HashRouter>
 

@@ -80,6 +80,7 @@ const Main = (props) => {
           pageComponents.push(
             <button 
             key={i}
+            onClick={()=>setPageStart(i * pageLength)}
             className="btn btn-outline-primary btn-sm text-center" 
             style={{width:"20px",border:"none"}}
             >
@@ -106,9 +107,9 @@ const Main = (props) => {
     return (
         <main className="container py-3">
               <div className="row mb-3 text-center">
-                <div style={{marginTop:"-40px", color:"#B2B2B2"}}>
+                <div style={{marginTop:"-40px", color:"#B2B2B2",marginBottom:"15px"}}>
                   <h5 style={{color:"gray"}}>
-                  Page Count: {totalPageCount}
+                  Page Count: <span style={{color:"#6F38C5"}}>{totalPageCount}</span>
                   </h5>
                
               &nbsp;
