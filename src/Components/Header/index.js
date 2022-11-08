@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import useApi from "../../Hooks/useApi";
 
 import Bootstrap from "../Header/bootstrap.svg";
@@ -9,31 +9,64 @@ const Header = (props) => {
   const api = useApi();
   const [user, setUser]=useState(null);
 
-  const test = true
+  useEffect(()=>{ 
+      const token = localStorage.getItem("token");
+      api.get("/user/appData")
+        .then((res)=>{
+          console.log("user res >>>", res);
+          setUser(res.data.data.user);
+        })
+        .catch((err)=>{
+          console.log("user error >>>", err);
+        })
+  },[]);
 
-    return(
+  const onLogoutBtnClick = () => {
+          api.get("auth/logout")
+            .then((res) =>{
+              console.log ("LOGOUT RES >>>", res);
+            })
+            .catch((err) =>{
+              console.log ("LOGOUT ERROR >>>", err);
+            })
+            .finally (()=>{
+              localStorage.removeItem("token")
+              window.location.href = "#/"
+              setTimeout(() =>{
+                window.location.reload();
+              },111)
+            })
+  };
+
+
+  // const test = true  //inline if yapısı için
+    return (
     <header className="container py-3">
       <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
          <a href="#/" className="d-flex align-items-center text-dark text-decoration-none">
             <span className="fs-4">Hizmet Bulma Uygulaması</span>
          </a> 
       
-         <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+
+            {/* inline if yapısı   */}   
+         {/* <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
           <strong 
-                className="me-3 py-2" style={{color:"#50577A"}} >
+                className="me-3 py-2" style={{color:"#50577A" }} >
             {test === true ? ("Test değeri TRUE") : ("Test değeri FALSE")}
           </strong>
-          </nav>
+          </nav> */}
 
           {user ? (
             <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
             <strong className="me-3 py-2 " >
             {user.fullname}
           </strong>
-          <a className="btn btn-danger me-3 py-2 " 
-             href="#/register">
+          <button className="btn btn-danger me-3 py-2 " 
+             href="#/"
+             onClick={onLogoutBtnClick}
+             >
              Logout
-          </a>
+          </button>
           </nav>
           ) : (
           

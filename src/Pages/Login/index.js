@@ -17,14 +17,14 @@ const Login = (props) => {
         }
             console.log("POSTA DATA >>>",postData);
 
-        api.post("/auth/login", postData)
+        api.post("auth/login", postData)
             .then((res=>{
                 console.log("LOGIN API POST",res);
                 console.log ("LOGIN TOKEN >>> ",res.data.data.token);
                 
 
                 if (res.data.status === "success"){
-                    localStorage.setItem("localStroge TOKEN",res.data.data.token);
+                    localStorage.setItem("token",res.data.data.token);
 
                     window.location.href = "/#"
                     setTimeout(()=> {
@@ -73,6 +73,7 @@ const Login = (props) => {
                 />
 
                 <div className="d-grid gap-2" style={{width:"225px"}}>
+                
                 <button 
                 type="button" 
                 className="btn btn-outline-primary" 
