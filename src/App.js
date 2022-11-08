@@ -9,7 +9,6 @@ import { connect } from "react-redux";
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Categories from "./Pages/Categories";
 import Services from "./Pages/Services";
 import Register from "./Pages/Register";
 import Blogs from "./Pages/Blogs";
@@ -56,7 +55,6 @@ function App (props) {
            <Routes>
             <Route index element={<Home/>}/>
             <Route path="login" element={<Login/>}/>
-            <Route path="categories" element={<Categories/>} />
             <Route path="services" element={<Services/>} />
             <Route path="register" element={<Register/>} />
             <Route path="blogs" element={<Blogs/>} />

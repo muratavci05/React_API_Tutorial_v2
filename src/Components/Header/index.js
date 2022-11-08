@@ -11,6 +11,7 @@ const Header = (props) => {
 
   useEffect(()=>{ 
       const token = localStorage.getItem("token");
+          if (token) { 
       api.get("/user/appData")
         .then((res)=>{
           console.log("user res >>>", res);
@@ -19,6 +20,8 @@ const Header = (props) => {
         .catch((err)=>{
           console.log("user error >>>", err);
         })
+
+      }
   },[]);
 
   const onLogoutBtnClick = () => {
