@@ -23,9 +23,18 @@ import ability from "./Ability/ability.js";
 
 
 function App (props) {
-  //console.log (">>> APP PROPS", props);
+  console.log (">>> APP COMPONENT PROPS", props);
 
-  const clientAbility = ability(null);
+
+ 
+  // inline if >>> eğer appdata !null ise 1 , null ise 2 çalışcak
+  const clientAbility = props.appDataState.appData 
+  ? ability(props.appDataState.appData.user)   // 1
+  : ability (null);                           //  2
+
+  // <<<<
+  console.log(" >>> ability durumu",clientAbility);
+
    const api = useApi()
 
   if (props.categoriesState.initialized === false) {

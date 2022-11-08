@@ -67,7 +67,7 @@ const Header = (props) => {
           </strong>
 
               <Can I="read" a="user_management">
-              <button className="btn btn-danger me-3 py-2" 
+              <button className="btn btn-outline-secondary me-3 py-2" 
              href="#/"
              onClick={onLogoutBtnClick}
              >
