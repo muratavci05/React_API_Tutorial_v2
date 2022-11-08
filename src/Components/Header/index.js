@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Can } from "../../Ability/can";
 import useApi from "../../Hooks/useApi";
 
 import Bootstrap from "../Header/bootstrap.svg";
@@ -64,7 +65,17 @@ const Header = (props) => {
             <strong className="me-3 py-2 " >
             {user.fullname}
           </strong>
-          <button className="btn btn-danger me-3 py-2 " 
+
+              <Can I="read" a="user_management">
+              <button className="btn btn-danger me-3 py-2" 
+             href="#/"
+             onClick={onLogoutBtnClick}
+             >
+              I Can Read User
+          </button>
+              </Can>
+              
+          <button className="btn btn-danger me-3 py-2" 
              href="#/"
              onClick={onLogoutBtnClick}
              >

@@ -18,9 +18,14 @@ import Footer from "./Components/Footer/index";
 import useApi from "./Hooks/useApi";
 import { SET_CATEGORIES } from "./Redux/Reducers/categoriesReducer";
 
+import { AbilityContext } from "./Ability/can";
+import ability from "./Ability/ability.js";
+
+
 function App (props) {
   //console.log (">>> APP PROPS", props);
 
+  const clientAbility = ability(null);
    const api = useApi()
 
   if (props.categoriesState.initialized === false) {
@@ -48,7 +53,10 @@ function App (props) {
 
       
   return (
-    <div className="App">
+
+    <AbilityContext.Provider value={clientAbility}>
+
+     <div className="App">
       <Header />
 
        <HashRouter>
@@ -63,6 +71,7 @@ function App (props) {
 
       <Footer/>   
      </div>
+     </AbilityContext.Provider>
   );
 }
 
