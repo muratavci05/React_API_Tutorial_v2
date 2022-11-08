@@ -17,6 +17,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer/index";
 import useApi from "./Hooks/useApi";
 import { SET_CATEGORIES } from "./Redux/Reducers/categoriesReducer";
+import { SET_APP_DATA } from "./Redux/Reducers/appDataReducer";
 
 import { AbilityContext } from "./Ability/can";
 import ability from "./Ability/ability.js";
@@ -33,7 +34,7 @@ function App (props) {
   : ability (null);                           //  2
 
   // <<<<
-  console.log(" >>> ability durumu",clientAbility);
+  console.log(" >>> ability durumu",props.appDataState.appData);
 
    const api = useApi()
 
@@ -45,12 +46,31 @@ function App (props) {
         const action = {
           type: SET_CATEGORIES,
           payload:{
-            categories:res.data.data
-          },
-
+            categories:res.data.data,
+            
+          }
         }
 
         props.dispatch(action)
+
+        // token olmasına rağmen appData verisi console gelmiyor, null durumundaydı..bu nedenle api'den almak için bu işlem yapıldı.
+        api.get("user/appData")
+          .then((res)=>{
+            console.log("appdata res",res);
+            
+            const action = {
+              type: SET_APP_DATA,
+              payload:{
+                appData:res.data.data,
+
+              },}
+              props.dispatch(action)
+
+          })
+
+          .catch((err)=>{
+            console.log("app data err", err);
+          })
     })
     .catch((err) => console.error (">>> KATEGORI LISTESI HATASI", err));
 

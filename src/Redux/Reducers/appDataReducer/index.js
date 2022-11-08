@@ -6,6 +6,7 @@ const initialState = {
     appData: null,
 }
 
+
 const Reducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_APP_DATA:
@@ -23,6 +24,9 @@ const Reducer = (state = initialState, action) => {
             default:
                 return state
     }
+    
 }
+
+
 
 export default Reducer;
