@@ -131,7 +131,9 @@ const Main = (props) => {
                 className="display-6 text-center mb-4" 
                 style={{color:"red"}}
                 >
-                  Bu Projede Backend API'ye Bağlanma Amaçlanmıştır</h2>
+                  Bu Projede Backend API'ye Bağlanma Amaçlanmıştır,
+                  
+                  </h2>
         </main>
     )
 };
