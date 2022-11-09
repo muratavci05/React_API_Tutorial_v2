@@ -21,6 +21,7 @@ import { SET_APP_DATA } from "./Redux/Reducers/appDataReducer";
 
 import { AbilityContext } from "./Ability/can";
 import ability from "./Ability/ability.js";
+import Dashboard from "./Pages/Admin/dashboard";
 
 
 function App (props) {
@@ -92,6 +93,10 @@ function App (props) {
            <Routes>
             <Route index element={<Home/>}/>
             <Route path="login" element={<Login/>}/>
+            <Route path="admin" element={<Dashboard/>} >
+            <Route path="dashboard" element={<Dashboard/>} />
+            </Route>
+
             <Route path="services" element={<Services/>} />
             <Route path="register" element={<Register/>} />
             <Route path="blogs" element={<Blogs/>} />

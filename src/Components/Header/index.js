@@ -35,7 +35,7 @@ const Header = (props) => {
             })
             .finally (()=>{
               localStorage.removeItem("token")
-              window.location.href = "#/"
+              window.location.href = "#/admin/dashboard"
               setTimeout(() =>{
                 window.location.reload();
               },111)
@@ -66,12 +66,12 @@ const Header = (props) => {
             {user.fullname}
           </strong>
 
-              <Can I="read" a="user_management">
+              <Can I="manager" a="all">
               <button className="btn btn-outline-secondary me-3 py-2" 
-             href="#/"
+             href="#/admin/dashboard"
              onClick={onLogoutBtnClick}
              >
-              I Can Read User
+              Admin
           </button>
               </Can>
               
