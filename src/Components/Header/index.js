@@ -33,9 +33,10 @@ const Header = (props) => {
             .catch((err) =>{
               console.log ("LOGOUT ERROR >>>", err);
             })
+        
             .finally (()=>{
               localStorage.removeItem("token")
-              window.location.href = "#/admin/dashboard"
+              window.location.href = "#/"
               setTimeout(() =>{
                 window.location.reload();
               },111)
@@ -47,7 +48,7 @@ const Header = (props) => {
     return (
     <header className="container py-3">
       <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-         <a href="#/" className="d-flex align-items-center text-dark text-decoration-none">
+         <a href="#/index" className="d-flex align-items-center text-dark text-decoration-none">
             <span className="fs-4">Hizmet Bulma Uygulaması</span>
          </a> 
       
@@ -67,12 +68,12 @@ const Header = (props) => {
           </strong>
 
               <Can I="manager" a="all">
-              <button className="btn btn-outline-secondary me-3 py-2" 
+              <a className="btn btn-outline-secondary me-3 py-2" 
              href="#/admin/dashboard"
-             onClick={onLogoutBtnClick}
+             
              >
               Admin
-          </button>
+          </a>
               </Can>
               
           <button className="btn btn-danger me-3 py-2" 
