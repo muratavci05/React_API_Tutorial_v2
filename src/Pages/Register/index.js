@@ -6,7 +6,8 @@ const Register = () => {
     return(
 
         <div className="container py-3">
-            Burası Register
+            Burası Register sayfası
+
         </div>
 
     )
