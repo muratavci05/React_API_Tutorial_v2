@@ -1,4 +1,7 @@
 # Getting Started with Create React App
+* With ReactJS; Connecting to different Backend APIs in the same project, performing Admin, User ability operations...
+* React JS ile aynı proje içinde farklı Backend API'lere bağlanma, Admin,Kullanıcı ability işlemleri yapma,
+
 
 ![](https://github.com/muratavci05/React_API_Tutorial_v2/blob/e39e76cea185037eb38f22c29d14f8201e869bef/src/Components/Assents/images/project.gif)
 
